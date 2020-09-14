@@ -20,8 +20,8 @@ router.post('/register', async (req, res, next) => {
     const User = await db.findBy({username})
 
       if(User) {
-        return res.status(409).json({
-          message: "Username is already taken"
+        return res.statusCode(409).json({
+          err: "Username is already taken"
       })}
 
     const newUser = await db.add({
